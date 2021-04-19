@@ -1,0 +1,28 @@
+PROCEDURE dot_product (vector1,vector2)
+VAR
+  ps := 0 : INTEGER;
+  vector1,vector2 : ARRAY_OF INTEGER;
+  i:= 0 : INTEGER;
+BEGIN
+    FOR i FROM 0 TO vector1.length DO
+        ps += vector1[i] * vector2[i];
+        write (ps);
+        i := i+1;
+    END_FOR
+END
+ALGORITHM determine_vectors
+VAR
+   j,i:= 0 : INTEGER;
+   vector1,vectors : ARRAY_OF INTEGER;
+BEGIN   
+    
+     FOR i FROM 0 TO vector1.length DO  
+     FOR j FROM i + 1 TO vectors.length DO
+       IF (dotProduct(vectors[i], vectors[j]) == 0) THEN
+          write("vectors[i] and vectors[j] are orthogonal");
+       END_IF
+          j := j+1;
+     END_FOR
+          i := i+1;
+     END_FOR
+END
